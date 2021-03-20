@@ -57,6 +57,11 @@
             text-align: center;
         }
     }
+    .slider {
+        &__prev, &__next {
+            display: none;
+        }
+    }
 }
 
 @media only screen and (max-width: 575.5px) {

@@ -1,28 +1,32 @@
-var slideIndex = 1;
-showSlides(slideIndex);
+var slider = tns({
+  container: '.my-slider',
+  items: 1,
+  slideBy: 'page',
+  autoplay: true,
+  autoplayHoverPause: true,
+  autoplayButtonOutput: false,
+  controls: false,
+  nav: false,
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+  responsive: {
+    556: {
+      gutter: 20,
+      items: 3
+    },
+    768: {
+      gutter: 50,
+      items: 2
+    },
+    1024: {
+      items: 1
+    }
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
+});
+
+document.querySelector('.slider__prev').addEventListener('click', function(){
+  slider.goTo('prev');
+})
+
+document.querySelector('.slider__next').addEventListener('click', function(){
+  slider.goTo('next');
+})
