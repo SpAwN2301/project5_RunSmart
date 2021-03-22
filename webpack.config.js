@@ -69,6 +69,10 @@ module.exports = {
             from: `${PATHS.src}/assets/fonts`,
             to: `${PATHS.dist}/assets/fonts`
           },
+          {
+            from: `${PATHS.src}/assets/img`,
+            to: `${PATHS.dist}/assets/img`
+          },
         ]
       }
     ),
@@ -83,7 +87,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'assets/img'
+          outputPath: 'assets/img/bg'
         }
       },
       {
