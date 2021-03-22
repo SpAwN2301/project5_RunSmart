@@ -62,6 +62,27 @@
             display: none;
         }
     }
+
+    .clients {
+        min-height: 800px;
+        padding: 30px 0;
+    }
+    .client {
+        align-items: center;
+        &__bio {
+            margin-left: 35px;
+        }
+        &__name {
+            font-size: 16px;
+        }
+        &__marathons {
+            font-size: 14px;
+        }
+        &__comment {
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
 }
 
 @media only screen and (max-width: 575.5px) {
@@ -128,6 +149,15 @@
         padding: 25px 0;
         &__descrip {
             font-size: 18px
+        }
+    }
+
+    .client {
+        margin-top: 30px;
+        flex-direction: column;
+        &__photo {
+            width: 140px;
+            margin-bottom: 10px;
         }
     }
 }
